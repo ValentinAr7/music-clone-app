@@ -15,7 +15,8 @@ const App = () => {
 
         <div className="px-6 h-[calc(100vh-72px)] overflow-y-scroll hide-scrollbar flex xl:flex-row flex-col-reverse">
           <div className="flex-1 h-fit pb-40">
-            <Routes>
+            
+            <Routes>        //General route structure
               <Route path="/" element={<Discover />} />
               <Route path="/top-artists" element={<TopArtists />} />
               <Route path="/top-charts" element={<TopCharts />} />
@@ -24,6 +25,7 @@ const App = () => {
               <Route path="/songs/:songid" element={<SongDetails />} />
               <Route path="/search/:searchTerm" element={<Search />} />
             </Routes>
+          
           </div>
           <div className="xl:sticky relative top-0 h-fit">
             <TopPlay />
