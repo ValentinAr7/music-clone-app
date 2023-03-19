@@ -1,4 +1,4 @@
-import { FaPauseCircle , FaPlayCirle } from 'react-icons/fa'
+import { FaPauseCircle , FaPlayCircle } from 'react-icons/fa'
 
 
 {/*If current song is playing show pause circle
@@ -12,7 +12,7 @@ const PlayPause = ({isPlaying, activeSong, song, handlePause, handlePlay}) => (
     onClick={handlePause}/>
   )  : (
 
-    <FaPlayCirle
+    <FaPlayCircle
     size={35}
     className='text-gray-300'
     onClick={handlePlay}/>
