@@ -10,7 +10,7 @@ import { links } from "../assets/constants";
     add styling to all links
     add icons beside linkds
 */}
-const NavLinks = () => {
+const NavLinks = () => (
   <div className="mt-10">
 
     {links.map((item) => (
@@ -26,7 +26,8 @@ const NavLinks = () => {
       </NavLink>
     ))}
   </div>
-}
+
+)
 
 const Sidebar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
