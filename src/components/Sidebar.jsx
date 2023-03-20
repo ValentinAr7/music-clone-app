@@ -1,11 +1,15 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { RiCloseLine } from 'react-icons/ri';
+import { HiOutlineMenu } from "react-icons/hi";
 
 import { logo } from "../assets";
 import { links } from "../assets/constants";
 
-//   {/*Map all links in the navbar */}
+ {/*Map all links in the navbar 
+    add styling to all links
+    add icons beside linkds
+*/}
 const NavLinks = () => {
   <div className="mt-10">
 
@@ -34,7 +38,14 @@ const Sidebar = () => {
         <NavLinks />
       </div>
 
-      <div></div>
+ {/*Set styling for mobile size */}
+
+      <div className="absolute md:hidden block top-6 right-3">
+        {mobileMenuOpen ? (
+          <RiCloseLine />
+        ) : <HiOutlineMenu/>}
+
+      </div>
     </>
   )
 }
