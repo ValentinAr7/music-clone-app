@@ -16,8 +16,9 @@ const TopChartCard = ({song, i}) => (
   py-2 p-4 rounded-lg cursor-pointer mb-2"
   >
 <h3 className="fot-bold text-base text-white mr-3"> 
-{i +  1} 
+{i +  1}. 
 </h3>  
+<div></div>
 </div>
 )
 
