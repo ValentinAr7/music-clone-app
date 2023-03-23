@@ -11,6 +11,7 @@ import { useGetTopChartsQuery } from "../redux/services/shazamCore";
 import 'swiper/css'
 import 'swiper/css/free-mode'
 
+//Create song card design
 const TopChartCard = ({song, i}) => (
   <div className="w-full flex flex-row items-center hover:bg-[#4c426e]
   py-2 p-4 rounded-lg cursor-pointer mb-2"
@@ -43,7 +44,6 @@ const topPlays = data?.slice(0, 5)
 const handlePauseClick = () => {
   dispatch(playPause(false))
 }
-
 const handlePlayClick = () => {
   dispatch(setActiveSong({ song, data, i }))
   dispatch(playPause(true))
@@ -51,6 +51,8 @@ const handlePlayClick = () => {
 
 
 return (
+
+  //Section heading desing
   <div ref={divRef} className="xl:ml-6 ml-0 xl:mb-0 mb-6 flex-1 xl:max-w-[500px] 
   max-w-full flex flex-col">
     <div className="w-full flex flex-col">
@@ -66,6 +68,7 @@ return (
         </Link>
         </div>
 
+        {/* Map over the top 5 played songs to display them */}
         <div className="mt-4 flex flex-col gap-1">
           {topPlays?.map((song, i) => (
             <TopChartCard
@@ -77,6 +80,8 @@ return (
         </div>
       </div>
 
+
+      {/* Design for top artists header*/}
       <div className="w-full flex flex-col mt-8">
       <div className="flex flex-row justify-between items-center">
         <h2 className="text-white font-bold text-2xl">
@@ -90,6 +95,7 @@ return (
         </Link>
         </div>
       
+      {/* Add sliding functionality for top artists */}
       <Swiper 
       slidesPerView='auto'
       spaceBetween={15}
@@ -99,6 +105,8 @@ return (
       modules={[FreeMode]}
       className='mt-4'
       >
+
+      {/* Map over the top artists to display them*/}
         {topPlays?.map((song, i) => (
           <SwiperSlide
           key={song?.key}
