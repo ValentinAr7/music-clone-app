@@ -30,6 +30,8 @@ const SongDetails = () => {
                     )) : <p className="text-gray-400 text-base my-1">Sorry, no lyrics found!</p> }
                 </div>
             </div>
+
+            <RelatedSongs/>
         </div>
     )
 }
