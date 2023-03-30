@@ -17,6 +17,13 @@ const artist = artistData?.artists[artistId]?.attributes;
 
         <div className="ml-5">
           <p className="font-bold sm:text-3xl text-xl text-white">{artistId ? artist?.name : songData?.title}</p>
+        {!artistId && (
+          <Link>
+          <p className="text-base text-gray-400 mt-2">
+            {songData?.subtitle}
+          </p>
+          </Link>
+        )}
         </div>
       </div>
     </div>
