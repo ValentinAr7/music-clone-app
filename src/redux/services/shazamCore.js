@@ -28,10 +28,10 @@ export const shazamCoreApi = createApi({
 
 export const {
     useGetTopChartsQuery,
+    useGetSongsByGenreQuery,
     useGetSongDetailsQuery,
     useGetSongRelatedQuery,
     useGetArtistDetailsQuery,
-    useGetSongsByCountryQuery,
-    useGetSongsByGenreQuery
+    useGetSongsByCountryQuery
 } = shazamCoreApi
 
