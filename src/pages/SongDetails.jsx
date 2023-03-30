@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { DetailsHeader, Error, Loader, RelatedSongs } from "../components";
-import { useGetSongDetailsQuery } from "../redux/services/shazamCore";
+import { useGetSongDetailsQuery, useGetSongRelatedQuery } from "../redux/services/shazamCore";
 import { setActiveSong, playPause } from "../redux/features/playerSlice";
 
 const SongDetails = () => {
@@ -11,7 +11,12 @@ const SongDetails = () => {
     const { activeSong, isPlaying } = useSelector((state) => state.player);
     const { data: songData, isFetching: isFetchingSongDetails } =
     useGetSongDetailsQuery({songid})
-    console.log(songid);
+    const { data, isFetching: isFetchingRelatedSongs, error} = useGetSongRelatedQuery({songid})
+
+    if(isFetchingSongDetails || isFetchingRelatedSongs) return
+    <Loader title='Searching song details'/>;
+
+    if (error) return <Error/>;
 
     return(
         <div className="flex flex-col">
